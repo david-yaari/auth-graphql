@@ -1,0 +1,30 @@
+{
+  "name": "auth-graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/david-yaari/auth-graphql.git",
+  "author": "David Yaari <david.yaari@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "migrate": " sequelize db:migrate",
+    "dev": "nodemon src/server --exec babel-node -e js",
+    "start": "node src/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "apollo-server": "^2.18.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.6",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "sequelize-cli": "^6.2.0"
+  }
+}
