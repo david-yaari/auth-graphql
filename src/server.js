@@ -10,6 +10,8 @@ const { JWT_SECRET, PORT } = process.env;
 const getUser = (token) => {
   try {
     if (token) {
+      console.log("verified:")
+      console.log(jwt.verify(token, JWT_SECRET))
       return jwt.verify(token, JWT_SECRET);
     }
     return null;
@@ -23,6 +25,7 @@ const server = new ApolloServer({
   resolvers,
   context: ({ req }) => {
     const token = req.get('Authorization') || '';
+    console.log(token.replace('Bearer', ''))
     return { user: getUser(token.replace('Bearer', '')) };
   },
   introspection: true,
